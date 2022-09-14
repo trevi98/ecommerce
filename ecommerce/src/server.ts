@@ -2,8 +2,10 @@ import express, { Request, Response } from 'express';
 import http from 'http2';
 import fs from 'fs';
 import path from 'path';
+import router from './router';
 
 const app = express();
+app.use(router);
 
 http
   .createSecureServer(
