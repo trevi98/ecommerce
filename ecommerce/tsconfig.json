@@ -3,13 +3,15 @@
   "extends": "@tsconfig/node18-strictest/tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
+    "typeRoots": ["node_modules/@types","src/@types"],
     "outDir": "dist",
     "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "importHelpers": true,
     "baseUrl": "src",
     "paths": {
-
+      "@logger": ["logger/index.ts"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.json", ".env"],

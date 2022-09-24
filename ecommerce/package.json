@@ -11,7 +11,9 @@
     "build:tsc": "tsc && tsc-alias",
     "test": "jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "seed:up": "cross-env-os NODE_ENV=development ts-node -r tsconfig-paths/register --transpile-only src/seeders/seed.ts up",
+    "seed:down": "cross-env-os NODE_ENV=development ts-node -r tsconfig-paths/register --transpile-only src/seeders/seed.ts down"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -21,6 +23,7 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "helmet": "^6.0.0",
+    "http-status-codes": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.4",
     "morgan": "^1.10.0",
@@ -30,6 +33,7 @@
     "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.247",
     "@tsconfig/node18-strictest": "^1.0.0",
@@ -37,6 +41,7 @@
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/http-status-codes": "^1.2.0",
     "@types/jest": "^29.0.0",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/morgan": "^1.9.3",
@@ -47,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "cross-env": "^7.0.3",
+    "cross-env-os": "^7.1.1",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
