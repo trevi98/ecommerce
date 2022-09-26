@@ -1,3 +1,9 @@
 {
-  "extends": ["react-app", "airbnb", "airbnb-typescript", "prettier"]
+  "extends": ["react-app", "airbnb", "airbnb-typescript", "prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
 }
