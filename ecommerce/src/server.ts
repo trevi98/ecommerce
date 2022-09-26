@@ -2,8 +2,8 @@ import express, { Request, Response } from 'express';
 import http from 'http2';
 import fs from 'fs';
 import path from 'path';
-import router from './router';
 import initDatabase from './database';
+import router from './router';
 require('dotenv').config({
   path: process.env.NODE_ENV === 'development' ? '.env.development' : '.env.production',
 });
